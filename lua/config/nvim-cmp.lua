@@ -23,7 +23,7 @@ cmp.setup({
         ['<C-j>'] = cmp.mapping.select_next_item(),
         -- Use <CR>(Enter) to confirm selection
         -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
         -- A super tab
         -- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
@@ -48,9 +48,9 @@ cmp.setup({
         end, { "i", "s" }),
     }),
 
-  -- Let's configure the item's appearance
-  -- source: https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
-  formatting = {
+    -- Let's configure the item's appearance
+    -- source: https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
+    formatting = {
       -- Set order from left to right
       -- kind: single letter indicating the type of completion
       -- abbr: abbreviation of "word"; when not empty it is used in the menu instead of "word"
@@ -67,15 +67,15 @@ cmp.setup({
           })[entry.source.name]
           return vim_item
       end,
-  },
+    },
 
-  -- Set source precedence
-  sources = cmp.config.sources({
+    -- Set source precedence
+    sources = cmp.config.sources({
       { name = 'nvim_lsp' },    -- For nvim-lsp
       { name = 'luasnip' },     -- For luasnip user
       { name = 'buffer' },      -- For buffer word completion
       { name = 'path' },        -- For path completion
-  })
+    })
 })
 
 -- setup vim-dadbod

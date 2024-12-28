@@ -1,6 +1,7 @@
 return {
-	-- LSP manager
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+    -- LSP manager
+    "neovim/nvim-lspconfig",
+    -- config = function()
+    --     require("config.lsp")
+    -- end,
 }
