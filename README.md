@@ -107,10 +107,11 @@ run `vimtutor` to learn basic VIM commands
 - Find files with telescope\
   \<Leader\>ff
 - Sql client with Dadbod\
-  :DBUI
+  :DBUI\
+  To execute a query: :w or \<Leader\>w
 - Language server\
   :LspInfo
-  It cannot determine the version of ElixirLS/Next LS/Lexical, but it still works.
+  It cannot determine the version of ElixirLS/Next LS/Lexical, but these still work.
 - Visual block mode\
   Ctrl+Q
 - Tabs to spaces\
