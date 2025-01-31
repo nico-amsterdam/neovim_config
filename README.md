@@ -102,7 +102,7 @@ run `vimtutor` to learn basic VIM commands
 
 \<Leader\> = space (in normal/visual mode)
 
-- Package manger\
+- Package manager\
   :Lazy
 - Find files with telescope\
   \<Leader\>ff
@@ -112,6 +112,8 @@ run `vimtutor` to learn basic VIM commands
 - Language server\
   :LspInfo
   It cannot determine the version of ElixirLS/Next LS/Lexical, but these still work.
+- Goto definition
+  gd
 - Visual block mode\
   Ctrl+Q
 - Tabs to spaces\
@@ -134,4 +136,13 @@ run `vimtutor` to learn basic VIM commands
   :Ex
 - lookup via ctag\
   g + ]
+- switch to previous file
+  :e#
+- switch to first loaded file
+  :e#1
+- load next file when nvim was started with a list of files
+  :n
 
+## Debug
+
+Check out the [elixir-debug](https://github.com/nico-amsterdam/neovim_config/tree/elixir-debug) branch.
