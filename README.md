@@ -3,8 +3,8 @@ My Neovim config with:
 - package manager: lazy-nvim
 - filesearch: Telescope &amp; ctags
 - sql-client: Dadbod-ui
-- Language servers: ElixirLS  optional: Next LS, Lexical
-- debug: nvim-dap, nvim-dap-ui, elixir-ls 
+- language servers: ElixirLS  available alternatives: Next LS, Lexical
+- debugger: nvim-dap, nvim-dap-ui, ElixirLs 
 - syntax-highlight: treesitter
 - autocomplete: nvim-cmp 
 - statusbar: lualine
