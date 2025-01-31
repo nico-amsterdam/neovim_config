@@ -153,3 +153,5 @@ run `vimtutor` to learn basic VIM commands
   :e#1
 - load next file when nvim was started with a list of files\
   :n
+- Search code\
+  :Telescope lsp_workspace_symbols
