@@ -147,10 +147,9 @@ run `vimtutor` to learn basic VIM commands
   :Ex
 - lookup via ctag\
   g + ]
-- switch to previous file
+- switch to previous file\
   :e#
-- switch to first loaded file
+- switch to first loaded file\
   :e#1
-- load next file when nvim was started with a list of files
+- load next file when nvim was started with a list of files\
   :n
-
