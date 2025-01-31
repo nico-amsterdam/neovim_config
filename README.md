@@ -114,6 +114,8 @@ run `vimtutor` to learn basic VIM commands
   It cannot determine the version of ElixirLS/Next LS/Lexical, but these still work.
 - Goto definition
   gd
+- Goto reference
+  gr
 - Visual block mode\
   Ctrl+Q
 - Tabs to spaces\

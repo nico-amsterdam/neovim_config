@@ -10,7 +10,8 @@ elixir.setup {
       enableTestLenses = false,
     },
     on_attach = function(client, bufnr)
-      vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", { noremap = true })
+      vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", { noremap = true })
       vim.keymap.set("n", ",fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
       vim.keymap.set("n", ",tp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
       vim.keymap.set("v", ",em", ":ElixirExpandMacro<cr>", { buffer = true, noremap = true })
