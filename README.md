@@ -3,7 +3,8 @@ My Neovim config with:
 - package manager: lazy-nvim
 - filesearch: Telescope &amp; ctags
 - sql-client: Dadbod-ui
-- Language servers: ElixirLS/Next LS/Lexical
+- Language servers: ElixirLS  optional: Next LS, Lexical
+- debug: nvim-dap, nvim-dap-ui, elixir-ls 
 - syntax-highlight: treesitter
 - autocomplete: nvim-cmp 
 - statusbar: lualine
@@ -74,19 +75,17 @@ I use asdf to switch:
 - Uncomment config function in ~/.config/nvim/lua/plugins/lsp.lua 
 - Set enabled = false in ~/.config/nvim/lua/plugins/elixir-tools.lua 
 
-<!--
-### Alternative: Directly use ElixirLS
+## Debugger
+
+For the debugger Elixir-ls the debug-adapter will be installed in ~/elixir/elixir-ls
+
 - cd
 - curl -Ls -o /dev/null -w %{url_effective} https://github.com/elixir-lsp/elixir-ls/releases/latest
 - mkdir -p elixir/elixir-ls
 - cd elixir/elixir-ls
-- wget https://github.com/elixir-lsp/elixir-ls/releases/download/v0.25.0/elixir-ls-v0.25.0.zip
-- unzip elixir-ls-v0.25.0.zip && rm elixir-ls-v0.25.0.zip
-- chmod +x language_server.sh
-- Uncomment config function in ~/.config/nvim/lua/plugins/lsp.lua 
-- Change cmd in ~/.config/nvim/lua/config/lsp.lua 
-- Set enabled = false in ~/.config/nvim/lua/plugins/elixir-tools.lua 
--->
+- wget https://github.com/elixir-lsp/elixir-ls/releases/download/v0.26.4/elixir-ls-v0.26.4.zip
+- unzip elixir-ls-v0.26.4.zip && rm elixir-ls-v0.26.4.zip
+- chmod +x *.sh
 
 # Checks
 
@@ -116,6 +115,16 @@ run `vimtutor` to learn basic VIM commands
   gd
 - Goto reference
   gr
+- Place breakpoint
+  \<Leader\>b
+- Launch debugger / continue to next breakpoint
+  F5
+- Debug step / step over / step out 
+  F1 / F2 / F3
+- Switch back to debug windows
+  F7
+- Breakpoint condition
+  \<Leader\>B
 - Visual block mode\
   Ctrl+Q
 - Tabs to spaces\
@@ -145,6 +154,3 @@ run `vimtutor` to learn basic VIM commands
 - load next file when nvim was started with a list of files
   :n
 
-## Debug
-
-Check out the [elixir-debug](https://github.com/nico-amsterdam/neovim_config/tree/elixir-debug) branch.
