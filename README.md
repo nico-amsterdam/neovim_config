@@ -155,3 +155,11 @@ run `vimtutor` to learn basic VIM commands
   :n
 - Search code\
   :Telescope lsp_workspace_symbols
+- Start recording macro\
+  q<letter>
+- Stop recording macro\
+  q
+- Play macro
+  @<letter>
+- Play last macro
+  Q
