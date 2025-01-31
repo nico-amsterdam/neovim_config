@@ -111,19 +111,19 @@ run `vimtutor` to learn basic VIM commands
 - Language server\
   :LspInfo
   It cannot determine the version of ElixirLS/Next LS/Lexical, but these still work.
-- Goto definition
+- Goto definition\
   gd
-- Goto reference
+- Goto reference\
   gr
-- Place breakpoint
+- Place breakpoint\
   \<Leader\>b
-- Launch debugger / continue to next breakpoint
+- Launch debugger / continue to next breakpoint\
   F5
-- Debug step / step over / step out 
+- Debug step / step over / step out\
   F1 / F2 / F3
-- Switch back to debug windows
+- Switch back to debug windows\
   F7
-- Breakpoint condition
+- Breakpoint condition\
   \<Leader\>B
 - Visual block mode\
   Ctrl+Q
