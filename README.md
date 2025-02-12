@@ -3,7 +3,7 @@ My Neovim config with:
 - package manager: lazy-nvim
 - filesearch: Telescope &amp; ctags
 - sql-client: Dadbod-ui
-- language servers: ElixirLS  available alternatives: Next LS, Lexical
+- language servers: ElixirLS. Available alternatives: Next LS, Lexical
 - debugger: nvim-dap, nvim-dap-ui, ElixirLs 
 - syntax-highlight: treesitter
 - autocomplete: nvim-cmp 
@@ -156,10 +156,10 @@ run `vimtutor` to learn basic VIM commands
 - Search code\
   :Telescope lsp_workspace_symbols
 - Start recording macro\
-  q<letter>
+  q\<letter\>
 - Stop recording macro\
   q
-- Play macro
-  @<letter>
-- Play last macro
+- Play macro\
+  @\<letter\>
+- Play last macro\
   Q
