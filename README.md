@@ -13,6 +13,7 @@ My Neovim config with:
 
 ## Install Neovim
 
+- sudo add-apt-repository ppa:neovim-ppa/unstable -y
 - sudo apt-get install neovim -y
   version 0.11
 - sudo apt install lua5.4 liblua5.4-dev -y
