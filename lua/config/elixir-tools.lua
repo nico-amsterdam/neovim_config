@@ -5,6 +5,7 @@ elixir.setup {
   nextls = {enable = false},
   elixirls = {
     enable = true,
+    tag = "v0.29.3",
     settings = elixirls.settings {
       dialyzerEnabled = false,
       enableTestLenses = false,

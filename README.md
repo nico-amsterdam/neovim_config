@@ -15,9 +15,9 @@ My Neovim config with:
 
 - sudo snap install nvim --classic
 - sudo apt install lua5.1 liblua5.1-dev -y
-- wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
-- tar zxpf luarocks-3.11.1.tar.gz
-- cd luarocks-3.11.1/
+- wget https://luarocks.org/releases/luarocks-3.12.2.tar.gz
+- tar zxpf luarocks-3.12.2.tar.gz
+- cd luarocks-3.12.2/
 - ./configure && make && sudo make install
 - sudo luarocks install luasocket
 
@@ -82,9 +82,11 @@ For the debugger Elixir-ls the debug-adapter will be installed in ~/elixir/elixi
 - curl -Ls -o /dev/null -w %{url_effective} https://github.com/elixir-lsp/elixir-ls/releases/latest
 - mkdir -p elixir/elixir-ls
 - cd elixir/elixir-ls
-- wget https://github.com/elixir-lsp/elixir-ls/releases/download/v0.26.4/elixir-ls-v0.26.4.zip
-- unzip elixir-ls-v0.26.4.zip && rm elixir-ls-v0.26.4.zip
+- wget https://github.com/elixir-lsp/elixir-ls/releases/download/v0.29.3/elixir-ls-v0.29.3.zip
+- unzip elixir-ls-v0.29.3.zip && rm elixir-ls-v0.29.3.zip
 - chmod +x *.sh
+
+Elixir-tools installs Elixir-ls in  ~/.cache/nvim/elixir-tools.nvim/installs/elixir-lsp/elixir-ls/tags_v0.29.3/* , so you could also symlink that.
 
 # Checks
 
