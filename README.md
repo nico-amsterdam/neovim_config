@@ -13,7 +13,8 @@ My Neovim config with:
 ## Install Neovim
 
 - sudo snap install nvim --classic
-  Minimum version 0.12
+\
+Minimum version 0.12
 - sudo apt install lua5.1 liblua5.1-dev -y
 - wget https://luarocks.org/releases/luarocks-3.12.2.tar.gz
 - tar zxpf luarocks-3.12.2.tar.gz
