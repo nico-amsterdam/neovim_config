@@ -68,7 +68,7 @@ Make sure the 'tree-sitter' command is in the PATH
 - :checkhealth luasnip
 
 
-## Install expert LSP
+## Install Expert LSP
 
 - nvim
 - :MasonInstall expert
