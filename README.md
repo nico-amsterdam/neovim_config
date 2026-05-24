@@ -28,10 +28,12 @@ My Neovim config with:
 
 Optional:
 - sudo apt-get install xsel
-  Clipboard tool
+\
+Clipboard tool
 - sudo apt-get install exuberant-ctags -y
-  see https://randre03.github.io/ctags_and_neovim/
-.\
+\
+see https://randre03.github.io/ctags_and_neovim/
+\
 If you have a working language server, you probably don't need ctags.
 
 ## Clone my config
