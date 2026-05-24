@@ -18,7 +18,7 @@ return {
     'nvim-neotest/nvim-nio',
 
     -- Installs the debug adapters for you
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add your own debuggers here
@@ -127,14 +127,14 @@ return {
     -- Elixir
     dap.adapters.mix_task = {
       type = 'executable',
-    -- changed: vim.fn.stdpath("data") .. '/mason/bin/elixir-ls-debugger',
-      command = vim.fn.expand('$HOME') .. '/elixir/elixir-ls/debug_adapter.sh',
+      command = vim.fn.stdpath("data") .. '/mason/bin/elixir-ls-debugger',
+      -- command = vim.fn.expand('$HOME') .. '/elixir/elixir-ls/debug_adapter.sh',
       args = {}
     }
     dap.configurations.elixir = {
       {
         type = "mix_task",
-        name = "mix pop3mail",
+        name = "mix run_pop3mail",
         task = 'run_pop3mail', -- example launch config
         taskArgs = {"--username=ausername", "--password=apassword"},
         request = "launch",

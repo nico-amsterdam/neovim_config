@@ -1,33 +1,56 @@
-local lspconfig = require("lspconfig")
-local configs = require("lspconfig.configs")
-local home = vim.fn.expand('$HOME')
+----------------------------------------------------------------------
+-- Lua LSP configuration
+----------------------------------------------------------------------
+vim.lsp.config("expert", {
+  settings = {
+    workspaceSymbols = {
+      minQueryLength = 0
+    }
+  }
+})
 
-local lexical_config = {
-        filetypes = { "elixir", "heex" },
-        cmd = { home .. "/elixir/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-        -- cmd = { home .. "/elixir/elixir-ls/language_server.sh" },
-        settings = {},
-}
+-- Enable Elixir Expert LSP
+vim.lsp.enable("expert")
 
-local custom_attach = function(client)
-        print("Lexical has started.")
-end
+vim.diagnostic.config({
+  severity_sort = true,
+  update_in_insert = false,
+  float = {
+    border = 'rounded',
+    source = 'if_many',
+  },
+  underline = true,
+  virtual_text = {
+    spacing = 2,
+    source = 'if_many',
+    prefix = '●',
+  },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = 'E',
+      [vim.diagnostic.severity.WARN] = 'W',
+      [vim.diagnostic.severity.INFO] = 'I',
+      [vim.diagnostic.severity.HINT] = 'H',
+    },
+  },
+})
 
-if not configs.lexical then
-	configs.lexical = {
-		default_config = {
-			filetypes = lexical_config.filetypes,
-			cmd = lexical_config.cmd,
-			root_dir = function(fname)
-				return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
-			end,
-			-- optional settings
-			settings = lexical_config.settings,
-		},
-	}
-end
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local bufnr = args.buf
+    local map = function(mode, lhs, rhs, desc)
+      vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+    end
 
-lspconfig.lexical.setup({
-	-- optional config
-	on_attach = custom_attach,
+    map('n', 'K', vim.lsp.buf.hover, 'LSP Hover')
+    map('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
+    map('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
+    map('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
+    map('n', 'gr', vim.lsp.buf.references, 'References')
+    map('n', '<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
+    map({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+    map('n', '<leader>f', function()
+      vim.lsp.buf.format({ async = true })
+    end, 'Format buffer')
+  end,
 })

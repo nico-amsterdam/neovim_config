@@ -11,6 +11,8 @@ vim.o.smartindent = true -- Automatically indent new lines
 -- vim.o.wrap = false -- Disable line wrapping
 vim.o.cursorline = true -- Highlight the current line
 vim.o.termguicolors = true -- Enable 24-bit RGB colors
+-- use system clipboard
+vim.opt.clipboard:append("unnamedplus")
 
 vim.cmd('nnoremap Y yy') -- behave the same as in Vim
 vim.cmd('colorscheme habamax')

@@ -3,9 +3,8 @@ My Neovim config with:
 - package manager: lazy-nvim
 - filesearch: Telescope &amp; ctags
 - sql-client: Dadbod-ui
-- language servers: ElixirLS. Available alternatives: Next LS, Lexical
+- language servers: Expert
 - debugger: nvim-dap, nvim-dap-ui, ElixirLs 
-- syntax-highlight: treesitter
 - autocomplete: nvim-cmp 
 - statusbar: lualine
 
@@ -14,6 +13,7 @@ My Neovim config with:
 ## Install Neovim
 
 - sudo snap install nvim --classic
+  Minimum version 0.12
 - sudo apt install lua5.1 liblua5.1-dev -y
 - wget https://luarocks.org/releases/luarocks-3.12.2.tar.gz
 - tar zxpf luarocks-3.12.2.tar.gz
@@ -27,6 +27,8 @@ My Neovim config with:
 - sudo apt-get install fd-find -y
 
 Optional:
+- sudo apt-get install xsel
+  Clipboard tool
 - sudo apt-get install exuberant-ctags -y
   see https://randre03.github.io/ctags_and_neovim/
 .\
@@ -41,6 +43,16 @@ If you have a working language server, you probably don't need ctags.
 - git clone https://github.com/nico-amsterdam/neovim_config nvim\
 Or fork the github repo to save your own adjustments in git.
 
+## Install tree-sitter
+
+To install tree-sitter-cli, the rust package manager cargo is needed. Install with:
+- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+Then install tree-sitter with cargo:
+- cargo install tree-sitter-cli
+
+Make sure the 'tree-sitter' command is in the PATH
+
 ## Install jsregexp for LuaSnip
 - nvim
 - :checkhealth luasnip
@@ -52,41 +64,27 @@ Or fork the github repo to save your own adjustments in git.
 - nvim
 - :checkhealth luasnip
 
-## Manually install Elixir language server
 
-Skip this chapter if you just want to use Elixir-tools.
-Elixir-tools uses a combination of [ElixirLS](https://github.com/elixir-lsp/elixir-ls) and [Next LS](https://github.com/elixir-tools/next-ls). Either one of them can be disabled in ~/.config/nvim/lua/config/elixir-tools.lua
+## Install expert LSP
 
-To use [Lexical](https://github.com/lexical-lsp/lexical), use the instructions below.
+- nvim
+- :MasonInstall expert
 
-Tested with Elixir 1.17 and OTP 27. 
-I use asdf to switch:
-- asdf global elixir 1.17.3-otp-27
+## Syntax highlighting for Elixir
 
-### Lexical
-- cd
-- mkdir -p elixir
-- cd elixir
-- git clone git@github.com:lexical-lsp/lexical.git
-- cd lexical
-- mix deps.get
-- mix package
-- Uncomment config function in ~/.config/nvim/lua/plugins/lsp.lua 
-- Set enabled = false in ~/.config/nvim/lua/plugins/elixir-tools.lua 
+- nvim
+- :TSManager
+
+Select and install (i): css, html_tags, html, elixir, heex, eex and optionally erlang 
 
 ## Debugger
 
-For the debugger Elixir-ls the debug-adapter will be installed in ~/elixir/elixir-ls
+The debugger is a bit slow to start. Several attempts to start debugging are needed.
 
-- cd
-- curl -Ls -o /dev/null -w %{url_effective} https://github.com/elixir-lsp/elixir-ls/releases/latest
-- mkdir -p elixir/elixir-ls
-- cd elixir/elixir-ls
-- wget https://github.com/elixir-lsp/elixir-ls/releases/download/v0.29.3/elixir-ls-v0.29.3.zip
-- unzip elixir-ls-v0.29.3.zip && rm elixir-ls-v0.29.3.zip
-- chmod +x *.sh
-
-Elixir-tools installs Elixir-ls in  ~/.cache/nvim/elixir-tools.nvim/installs/elixir-lsp/elixir-ls/tags_v0.29.3/* , so you could also symlink that.
+Install via Mason
+- nvim
+- :Mason
+- In the list of DAP debuggers (3), select elixir-ls and install with 'i'
 
 # Checks
 
@@ -94,6 +92,7 @@ Elixir-tools installs Elixir-ls in  ~/.cache/nvim/elixir-tools.nvim/installs/eli
 - :chechhealth
 - :checkhealth lazy
 - :checkhealth telescope
+- :checkhealth vim.lsp
 
 
 # Keys
@@ -109,13 +108,12 @@ run `vimtutor` to learn basic VIM commands
 - Sql client with Dadbod\
   :DBUI\
   To execute a query: :w or \<Leader\>w
-- Language server\
-  :LspInfo
-  It cannot determine the version of ElixirLS/Next LS/Lexical, but these still work.
 - Goto definition\
   gd
 - Goto reference\
   gr
+- Goto implementation\
+  gi
 - Place breakpoint\
   \<Leader\>b
 - Launch debugger / continue to next breakpoint\
