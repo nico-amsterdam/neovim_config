@@ -112,8 +112,6 @@ run `vimtutor` to learn basic VIM commands
   gd
 - Goto reference\
   gr
-- Goto implementation\
-  gi
 - Place breakpoint\
   \<Leader\>b
 - Launch debugger / continue to next breakpoint\
